@@ -20,5 +20,16 @@
     height: 90%;
     border: 1px solid black;
     background: burlywood;
-    border-radius: 10px;    
+    border-radius: 10px; 
+    display: flex;   
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.red-block, .green-block, .white-block, .blue-block, .orange-block, .yellow-block{
+    
+    width: 28%;
+    height: 28%;
+    border: 1px solid black;
 }
