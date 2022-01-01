@@ -1,0 +1,11 @@
+
+.cubic-partition{
+    width: 600px;
+    border: 3px solid black;
+    background: burlywood;
+}
+.line-one, .line-two, .line-three, .line-four{
+    height: 300px;
+    border: 3px solid black;
+    background: burlywood;
+}
