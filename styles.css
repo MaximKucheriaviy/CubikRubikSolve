@@ -28,8 +28,26 @@
     gap: 5px;
 }
 .red-block, .green-block, .white-block, .blue-block, .orange-block, .yellow-block{
-    
     width: 28%;
     height: 28%;
     border: 1px solid black;
+}
+
+.red-block{
+    background-color: red;
+}
+.green-block{
+    background-color: green;
+}
+.white-block{
+    background-color: white;
+}
+.blue-block{
+    background-color: blue;
+}
+.orange-block{
+    background-color: orange;
+}
+.yellow-block{
+    background-color: yellow;
 }
