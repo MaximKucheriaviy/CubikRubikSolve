@@ -1,3 +1,7 @@
+// objects
+let cubeMap = document.querySelector(".cubic-partition");
+let createButton = document.querySelector('.create-button')
+
 let r1 = document.getElementById("r1");
 let r2 = document.getElementById("r2");
 let r3 = document.getElementById("r3");
@@ -72,3 +76,11 @@ let blue = "#0000ff"
 let orange = "#ffa500";
 let green = "#008000";
 let yellow = "#ffff00"
+
+
+let redRGB = "rgb(255, 0, 0)"
+let greenRGB = "rgb(0, 128, 0)"
+let whiteRGB = "rgb(255, 255, 255)"
+let blueRGB = "rgb(0, 0, 255)"
+let orangeRGB = "rgb(255, 165, 0)"
+let yellowRGB = "rgb(255, 255, 0)"
