@@ -24,3 +24,5 @@ cubeMap.onclick = function(event){
         }
     }
 }    
+
+
