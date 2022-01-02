@@ -62,3 +62,13 @@ let y6 = document.getElementById("y6");
 let y7 = document.getElementById("y7");
 let y8 = document.getElementById("y8");
 let y9 = document.getElementById("y9");
+
+
+// colorts
+
+let white = "#ffffff";
+let red = "#ff0000";
+let blue = "#0000ff"
+let orange = "#ffa500";
+let green = "#008000";
+let yellow = "#ffff00"
