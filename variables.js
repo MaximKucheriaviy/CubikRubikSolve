@@ -1,7 +1,12 @@
 // objects
 let cubeMap = document.querySelector(".cubic-partition");
 let createButton = document.querySelector('.create-button')
-
+let cube = [["r", "r", "r", "r", "r", "r", "r", "r", "r"],
+            ["w", "w", "w", "w", "w", "w", "w", "w", "w"],
+            ["b", "b", "b", "b", "b", "b", "b", "b", "b"],
+            ["g", "g", "g", "g", "g", "g", "g", "g", "g"],  
+            ["o", "o", "o", "o", "o", "o", "o", "o", "o"],    
+            ["y", "y", "y", "y", "y", "y", "y", "y", "y"]] 
 let r1 = document.getElementById("r1");
 let r2 = document.getElementById("r2");
 let r3 = document.getElementById("r3");
