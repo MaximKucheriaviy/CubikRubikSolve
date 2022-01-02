@@ -52,60 +52,120 @@ function createCube(){
     cube[0][5] = colorToString(r6)
     cube[0][6] = colorToString(r7)
     cube[0][7] = colorToString(r8)
-    cube[0][9] = colorToString(r9)
+    cube[0][8] = colorToString(r9)
 
-    // cube[1][0] = colorToString(w1)
-    // cube[1][1] = colorToString(w2)
-    // cube[1][2] = colorToString(w3)
-    // cube[1][3] = colorToString(w4)
-    // cube[1][4] = colorToString(w5)
-    // cube[1][5] = colorToString(w6)
-    // cube[1][6] = colorToString(w7)
-    // cube[1][7] = colorToString(w8)
-    // cube[1][9] = colorToString(w9)
+    cube[1][0] = colorToString(w1)
+    cube[1][1] = colorToString(w2)
+    cube[1][2] = colorToString(w3)
+    cube[1][3] = colorToString(w4)
+    cube[1][4] = colorToString(w5)
+    cube[1][5] = colorToString(w6)
+    cube[1][6] = colorToString(w7)
+    cube[1][7] = colorToString(w8)
+    cube[1][8] = colorToString(w9)
 
 
-    // cube[2][0] = colorToString(b1)
-    // cube[2][1] = colorToString(b2)
-    // cube[2][2] = colorToString(b3)
-    // cube[2][3] = colorToString(b4)
-    // cube[2][4] = colorToString(b5)
-    // cube[2][5] = colorToString(b6)
-    // cube[2][6] = colorToString(b7)
-    // cube[2][7] = colorToString(b8)
-    // cube[2][9] = colorToString(b9)
+    cube[2][0] = colorToString(b1)
+    cube[2][1] = colorToString(b2)
+    cube[2][2] = colorToString(b3)
+    cube[2][3] = colorToString(b4)
+    cube[2][4] = colorToString(b5)
+    cube[2][5] = colorToString(b6)
+    cube[2][6] = colorToString(b7)
+    cube[2][7] = colorToString(b8)
+    cube[2][8] = colorToString(b9)
 
-    // cube[3][0] = colorToString(g1)
-    // cube[3][1] = colorToString(g2)
-    // cube[3][2] = colorToString(g3)
-    // cube[3][3] = colorToString(g4)
-    // cube[3][4] = colorToString(g5)
-    // cube[3][5] = colorToString(g6)
-    // cube[3][6] = colorToString(g7)
-    // cube[3][7] = colorToString(g8)
-    // cube[3][9] = colorToString(g9)
+    cube[3][0] = colorToString(g1)
+    cube[3][1] = colorToString(g2)
+    cube[3][2] = colorToString(g3)
+    cube[3][3] = colorToString(g4)
+    cube[3][4] = colorToString(g5)
+    cube[3][5] = colorToString(g6)
+    cube[3][6] = colorToString(g7)
+    cube[3][7] = colorToString(g8)
+    cube[3][8] = colorToString(g9)
 
-    // cube[4][0] = colorToString(o1)
-    // cube[4][1] = colorToString(o2)
-    // cube[4][2] = colorToString(o3)
-    // cube[4][3] = colorToString(o4)
-    // cube[4][4] = colorToString(o5)
-    // cube[4][5] = colorToString(o6)
-    // cube[4][6] = colorToString(o7)
-    // cube[4][7] = colorToString(o8)
-    // cube[4][9] = colorToString(o9)
+    cube[4][0] = colorToString(o1)
+    cube[4][1] = colorToString(o2)
+    cube[4][2] = colorToString(o3)
+    cube[4][3] = colorToString(o4)
+    cube[4][4] = colorToString(o5)
+    cube[4][5] = colorToString(o6)
+    cube[4][6] = colorToString(o7)
+    cube[4][7] = colorToString(o8)
+    cube[4][8] = colorToString(o9)
 
-    // cube[5][0] = colorToString(y1)
-    // cube[5][1] = colorToString(y2)
-    // cube[5][2] = colorToString(y3)
-    // cube[5][3] = colorToString(y4)
-    // cube[5][4] = colorToString(y5)
-    // cube[5][5] = colorToString(y6)
-    // cube[5][6] = colorToString(y7)
-    // cube[5][7] = colorToString(y8)
-    // cube[5][9] = colorToString(y9)
+    cube[5][0] = colorToString(y1)
+    cube[5][1] = colorToString(y2)
+    cube[5][2] = colorToString(y3)
+    cube[5][3] = colorToString(y4)
+    cube[5][4] = colorToString(y5)
+    cube[5][5] = colorToString(y6)
+    cube[5][6] = colorToString(y7)
+    cube[5][7] = colorToString(y8)
+    cube[5][8] = colorToString(y9)
 }
 
 function showCube(){
-    alert(cube[0].toString())
+    for(let i = 0; i < 6; i++){
+        for(let j = 0; j < 9; j++){
+            if(cube[i][j] == "r"){
+                cubeObject[i][j].style.background = red
+            }
+            else if(cube[i][j] == "w"){
+                cubeObject[i][j].style.background = white
+            }
+            else if(cube[i][j] == "b"){
+                cubeObject[i][j].style.background = blue
+            }
+            else if(cube[i][j] == "g"){
+                cubeObject[i][j].style.background = green
+            }
+            else if(cube[i][j] == "o"){
+                cubeObject[i][j].style.background = orange
+            }
+            else if(cube[i][j] == "y"){
+                cubeObject[i][j].style.background = yellow
+            }
+        }
+    }
+}
+function sideTurn_C(sideNum){
+    let buf = new Array
+    buf[2] = cube[sideNum][2]
+    buf[1] = cube[sideNum][1] 
+    
+    cube[sideNum][2] = cube[sideNum][0]
+    cube[sideNum][1] = cube[sideNum][3]
+    cube[sideNum][0] = cube[sideNum][6]
+    cube[sideNum][3] = cube[sideNum][7]
+    cube[sideNum][6] = cube[sideNum][8]
+    cube[sideNum][7] = cube[sideNum][5]
+    cube[sideNum][8] = buf[2]
+    cube[sideNum][5] = buf[1]
+}
+
+function redTurn_C(){
+    let buff = new Array
+    buff[0] = cube[sides.yellow][6]
+    buff[1] = cube[sides.yellow][7]
+    buff[2] = cube[sides.yellow][8]
+
+    cube[sides.yellow][8] = cube[sides.blue][2]
+    cube[sides.yellow][7] = cube[sides.blue][5]
+    cube[sides.yellow][6] = cube[sides.blue][8]
+
+    cube[sides.blue][8] = cube[sides.white][2]
+    cube[sides.blue][5] = cube[sides.white][1]
+    cube[sides.blue][2] = cube[sides.white][0]
+
+    cube[sides.white][0] = cube[sides.green][6]
+    cube[sides.white][1] = cube[sides.green][3]
+    cube[sides.white][2] = cube[sides.green][0]
+
+    cube[sides.green][0] = buff[0]
+    cube[sides.green][3] = buff[1]
+    cube[sides.green][6] = buff[2]
+
+    sideTurn_C(sides.red)
 }
