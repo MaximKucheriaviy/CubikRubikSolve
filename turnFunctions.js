@@ -75,3 +75,28 @@ function redTurn_aC(){
 
     sideTurn_aC(sides.red)
 }
+
+function blueTurn_C(){
+    let buff = new Array
+    buff[0] = cube[sides.yellow][0]
+    buff[1] = cube[sides.yellow][3]
+    buff[2] = cube[sides.yellow][6]
+
+    cube[sides.yellow][6] = cube[sides.orange][2]
+    cube[sides.yellow][3] = cube[sides.orange][5]
+    cube[sides.yellow][0] = cube[sides.orange][8]
+
+    cube[sides.orange][8] = cube[sides.white][0]
+    cube[sides.orange][5] = cube[sides.white][3]
+    cube[sides.orange][2] = cube[sides.white][6]
+
+    cube[sides.white][6] = cube[sides.red][6]
+    cube[sides.white][3] = cube[sides.red][3]
+    cube[sides.white][0] = cube[sides.red][0]
+
+    cube[sides.red][0] = buff[0]
+    cube[sides.red][3] = buff[1]
+    cube[sides.red][6] = buff[2]
+
+    sideTurn_C(sides.blue)
+}
