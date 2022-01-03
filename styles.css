@@ -1,3 +1,10 @@
+main{
+    display: flex;
+}
+nav{
+    display: flex;
+    flex-direction: column;
+}
 
 .cubic-partition{
     margin: 20px auto;
@@ -52,4 +59,8 @@
 }
 .yellow-block{
     background-color: yellow;
+}
+.button-grup{
+    display: flex;
+    justify-content: center;
 }
