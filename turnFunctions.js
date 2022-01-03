@@ -12,20 +12,6 @@ function sideTurn_C(sideNum){
     cube[sideNum][8] = buf[2]
     cube[sideNum][5] = buf[1]
 }
-function sideTurn_aC(sideNum){
-    let buf = new Array
-    buf[2] = cube[sideNum][0]
-    buf[1] = cube[sideNum][1] 
-
-    cube[sideNum][0] = cube[sideNum][2]
-    cube[sideNum][1] = cube[sideNum][5]
-    cube[sideNum][2] = cube[sideNum][8] 
-    cube[sideNum][5] = cube[sideNum][7]
-    cube[sideNum][8] = cube[sideNum][6]
-    cube[sideNum][7] = cube[sideNum][3]
-    cube[sideNum][6] = buf[2]
-    cube[sideNum][3] = buf[1]
-}
 function redTurn_C(){
     let buff = new Array
     buff[0] = cube[sides.yellow][6]
@@ -51,28 +37,9 @@ function redTurn_C(){
     sideTurn_C(sides.red)
 }
 function redTurn_aC(){
-    let buff = new Array
-    buff[0] = cube[sides.yellow][6]
-    buff[1] = cube[sides.yellow][7]
-    buff[2] = cube[sides.yellow][8]
-
-    cube[sides.yellow][8] = cube[sides.green][6]
-    cube[sides.yellow][7] = cube[sides.green][3]
-    cube[sides.yellow][6] = cube[sides.green][0]
-
-    cube[sides.green][6] = cube[sides.white][0]
-    cube[sides.green][3] = cube[sides.white][1]
-    cube[sides.green][0] = cube[sides.white][2]
-
-    cube[sides.white][0] = cube[sides.blue][2]
-    cube[sides.white][1] = cube[sides.blue][5]
-    cube[sides.white][2] = cube[sides.blue][8]
-
-    cube[sides.blue][2] = buff[2]
-    cube[sides.blue][5] = buff[1]
-    cube[sides.blue][8] = buff[0]
-
-    sideTurn_aC(sides.red)
+    redTurn_C()
+    redTurn_C()
+    redTurn_C()
 }
 function blueTurn_C(){
     let buff = new Array
@@ -99,28 +66,9 @@ function blueTurn_C(){
     sideTurn_C(sides.blue)
 }
 function blueTurn_aC(){
-    let buff = new Array
-    buff[0] = cube[sides.yellow][0]
-    buff[1] = cube[sides.yellow][3]
-    buff[2] = cube[sides.yellow][6]
-
-    cube[sides.yellow][6] = cube[sides.red][6]
-    cube[sides.yellow][3] = cube[sides.red][3]
-    cube[sides.yellow][0] = cube[sides.red][0]
-
-    cube[sides.red][6] = cube[sides.white][6]
-    cube[sides.red][3] = cube[sides.white][3]
-    cube[sides.red][0] = cube[sides.white][0]
-
-    cube[sides.white][6] = cube[sides.orange][2]
-    cube[sides.white][3] = cube[sides.orange][5]
-    cube[sides.white][0] = cube[sides.orange][8]
-
-    cube[sides.orange][2] = buff[2]
-    cube[sides.orange][5] = buff[1]
-    cube[sides.orange][8] = buff[0]
-
-    sideTurn_aC(sides.blue)
+    blueTurn_C()
+    blueTurn_C()
+    blueTurn_C()
 }
 function orangeTurn_C(){
     let buff = new Array
@@ -147,26 +95,36 @@ function orangeTurn_C(){
     sideTurn_C(sides.orange)
 }
 function orangeTurn_aC(){
+    orangeTurn_C()
+    orangeTurn_C()
+    orangeTurn_C()
+}
+function greenTurn_C(){
     let buff = new Array
-    buff[0] = cube[sides.yellow][2]
-    buff[1] = cube[sides.yellow][1]
-    buff[2] = cube[sides.yellow][0]
+    buff[2] = cube[sides.yellow][2]
+    buff[1] = cube[sides.yellow][5]
+    buff[0] = cube[sides.yellow][8]
 
-    cube[sides.yellow][0] = cube[sides.blue][6]
-    cube[sides.yellow][1] = cube[sides.blue][3]
-    cube[sides.yellow][2] = cube[sides.blue][0]
+    cube[sides.yellow][2] = cube[sides.red][2]
+    cube[sides.yellow][5] = cube[sides.red][5]
+    cube[sides.yellow][8] = cube[sides.red][8]
 
-    cube[sides.blue][6] = cube[sides.white][8]
-    cube[sides.blue][3] = cube[sides.white][7]
-    cube[sides.blue][0] = cube[sides.white][6]
+    cube[sides.red][8] = cube[sides.white][8]
+    cube[sides.red][5] = cube[sides.white][5]
+    cube[sides.red][2] = cube[sides.white][2]
 
-    cube[sides.white][8] = cube[sides.green][2]
-    cube[sides.white][7] = cube[sides.green][5]
-    cube[sides.white][6] = cube[sides.green][8]
+    cube[sides.white][8] = cube[sides.orange][0]
+    cube[sides.white][5] = cube[sides.orange][3]
+    cube[sides.white][2] = cube[sides.orange][6]
 
-    cube[sides.green][2] = buff[2]
-    cube[sides.green][5] = buff[1]
-    cube[sides.green][8] = buff[0]
+    cube[sides.orange][0] = buff[0]
+    cube[sides.orange][3] = buff[1]
+    cube[sides.orange][6] = buff[2]
 
-    sideTurn_aC(sides.orange)
+    sideTurn_C(sides.green)
+}
+function greenTurn_aC(){
+    greenTurn_C()
+    greenTurn_C()
+    greenTurn_C()
 }
