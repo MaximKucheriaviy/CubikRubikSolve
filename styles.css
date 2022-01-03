@@ -7,7 +7,7 @@
 }
 .line-one, .line-two, .line-three, .line-four{
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
     height: 200px;
