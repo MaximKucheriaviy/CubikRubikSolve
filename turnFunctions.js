@@ -128,3 +128,61 @@ function greenTurn_aC(){
     greenTurn_C()
     greenTurn_C()
 }
+function yellowTurn_C(){
+    let buff = new Array
+    buff[2] = cube[sides.orange][2]
+    buff[1] = cube[sides.orange][1]
+    buff[0] = cube[sides.orange][0]
+
+    cube[sides.orange][0] = cube[sides.blue][0]
+    cube[sides.orange][1] = cube[sides.blue][1]
+    cube[sides.orange][2] = cube[sides.blue][2]
+
+    cube[sides.blue][0] = cube[sides.red][0]
+    cube[sides.blue][1] = cube[sides.red][1]
+    cube[sides.blue][2] = cube[sides.red][2]
+
+    cube[sides.red][0] = cube[sides.green][0]
+    cube[sides.red][1] = cube[sides.green][1]
+    cube[sides.red][2] = cube[sides.green][2]
+
+    cube[sides.green][0] = buff[0]
+    cube[sides.green][1] = buff[1]
+    cube[sides.green][2] = buff[2]
+
+    sideTurn_C(sides.yellow)
+}
+function yellowTurn_aC(){
+    yellowTurn_C()
+    yellowTurn_C()
+    yellowTurn_C()
+}
+function whiteTurn_C(){
+    let buff = new Array
+    buff[0] = cube[sides.red][8]
+    buff[1] = cube[sides.red][7]
+    buff[2] = cube[sides.red][6]
+
+    cube[sides.red][8] = cube[sides.blue][8]
+    cube[sides.red][7] = cube[sides.blue][7]
+    cube[sides.red][6] = cube[sides.blue][6]
+
+    cube[sides.blue][8] = cube[sides.orange][8]
+    cube[sides.blue][7] = cube[sides.orange][7]
+    cube[sides.blue][6] = cube[sides.orange][6]
+
+    cube[sides.orange][8] = cube[sides.green][8]
+    cube[sides.orange][7] = cube[sides.green][7]
+    cube[sides.orange][6] = cube[sides.green][6]
+
+    cube[sides.green][8] = buff[0]
+    cube[sides.green][7] = buff[1]
+    cube[sides.green][6] = buff[2]
+
+    sideTurn_C(sides.yellow)
+}
+function whiteTurn_aC(){
+    whiteTurn_C()
+    whiteTurn_C()
+    whiteTurn_C()
+}

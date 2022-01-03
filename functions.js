@@ -105,7 +105,6 @@ function createCube(){
     cube[5][7] = colorToString(y8)
     cube[5][8] = colorToString(y9)
 }
-
 function showCube(){
     for(let i = 0; i < 6; i++){
         for(let j = 0; j < 9; j++){
