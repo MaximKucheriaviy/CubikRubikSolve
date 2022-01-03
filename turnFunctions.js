@@ -179,7 +179,7 @@ function whiteTurn_C(){
     cube[sides.green][7] = buff[1]
     cube[sides.green][6] = buff[2]
 
-    sideTurn_C(sides.yellow)
+    sideTurn_C(sides.white)
 }
 function whiteTurn_aC(){
     whiteTurn_C()
