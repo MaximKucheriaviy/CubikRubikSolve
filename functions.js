@@ -129,4 +129,99 @@ function showCube(){
         }
     }
 }
+function WC_fromYellowToWhite(){
+    // находим и стави красный белый
+    if(cube[sides.yellow][7] == "w" && cube[sides.red][1] == "r"){
+        redTurn_C();
+        redTurn_C();
+    }
+    else if(cube[sides.yellow][3] == "w" && cube[sides.blue][1] == "r"){
+        yellowTurn_aC();
+        redTurn_C();
+        redTurn_C();
+    }
+    else if(cube[sides.yellow][1] == "w" && cube[sides.orange][1] == "r"){
+        yellowTurn_aC();
+        yellowTurn_aC();
+        redTurn_C();
+        redTurn_C();
+    }
+    else if(cube[sides.yellow][5] == "w" && cube[sides.green][1] == "r"){
+        yellowTurn_C()
+        redTurn_C();
+        redTurn_C();
+    }
+    // находим и стави синий белый
+    if(cube[sides.yellow][7] == "w" && cube[sides.red][1] == "b"){
+        yellowTurn_C()
+        blueTurn_C()
+        blueTurn_C()
+    }
+    else if(cube[sides.yellow][3] == "w" && cube[sides.blue][1] == "b"){
+        blueTurn_C()
+        blueTurn_C()
+    }
+    else if(cube[sides.yellow][1] == "w" && cube[sides.orange][1] == "b"){
+        yellowTurn_aC()
+        blueTurn_C()
+        blueTurn_C()
+    }
+    else if(cube[sides.yellow][5] == "w" && cube[sides.green][1] == "b"){
+        yellowTurn_aC()
+        yellowTurn_aC()
+        blueTurn_C()
+        blueTurn_C()
+    }
+    // находим и стави зеленый белый
+    if(cube[sides.yellow][7] == "w" && cube[sides.red][1] == "g"){
+        yellowTurn_aC()
+        greenTurn_C()
+        greenTurn_C()
+    }
+    else if(cube[sides.yellow][3] == "w" && cube[sides.blue][1] == "g"){
+        yellowTurn_aC()
+        yellowTurn_aC()
+        greenTurn_C()
+        greenTurn_C()
+    }
+    else if(cube[sides.yellow][1] == "w" && cube[sides.orange][1] == "g"){
+        yellowTurn_C()
+        greenTurn_C()
+        greenTurn_C()
+    }
+    else if(cube[sides.yellow][5] == "w" && cube[sides.green][1] == "g"){
+        greenTurn_C()
+        greenTurn_C()
+    }
+    // находим и стави оранжевый белый
+    if(cube[sides.yellow][7] == "w" && cube[sides.red][1] == "o"){
+        yellowTurn_aC()
+        yellowTurn_aC()
+        orangeTurn_C()
+        orangeTurn_C()
+    }
+    else if(cube[sides.yellow][3] == "w" && cube[sides.blue][1] == "o"){
+        yellowTurn_C()
+        orangeTurn_C()
+        orangeTurn_C()
+    }
+    else if(cube[sides.yellow][1] == "w" && cube[sides.orange][1] == "o"){
+        orangeTurn_C()
+        orangeTurn_C()
+    }
+    else if(cube[sides.yellow][5] == "w" && cube[sides.green][1] == "o"){
+        yellowTurn_aC()
+        orangeTurn_C()
+        orangeTurn_C()
+    }
+    if(cube[sides.yellow][7] == "w" || cube[sides.yellow][3] == "w" || cube[sides.yellow][1] == "w" || cube[sides.yellow][5] == "w"){
+        WC_fromYellowToWhite();
+    }
+}
+function solvWiteCrost(){
+    WC_fromYellowToWhite();
+}
+function solveCube(){
+    solvWiteCrost();
+}
 

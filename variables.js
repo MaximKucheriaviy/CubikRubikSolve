@@ -4,21 +4,8 @@ let cubeMap = document.querySelector(".cubic-partition");
 
 
 let createButton = document.querySelector('.create-button')
-
-let red_C_button = document.querySelector(".red_C_button")
-let red_aC_button = document.querySelector(".red_aC_button")
-let blue_C_button = document.querySelector(".blue_C_button")
-let blue_aC_button = document.querySelector(".blue_aC_button")
-let orange_C_button = document.querySelector(".orange_C_button")
-let orange_aC_button = document.querySelector(".orange_aC_button")
-let green_C_button = document.querySelector(".green_C_button")
-let green_aC_button = document.querySelector(".green_aC_button")
-let white_C_button = document.querySelector(".white_C_button")
-let white_aC_button = document.querySelector(".white_aC_button")
-let yellow_C_button = document.querySelector(".yellow_C_button")
-let yellow_aC_button = document.querySelector(".yellow_aC_button")
-
-
+let ecran = document.querySelector(".solve")
+let solveWay = ""
 
 let cube = [["r", "r", "r", "r", "r", "r", "r", "r", "r"],
             ["w", "w", "w", "w", "w", "w", "w", "w", "w"],

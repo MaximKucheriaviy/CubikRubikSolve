@@ -2,6 +2,7 @@ main{
     display: flex;
 }
 nav{
+    width: auto;
     display: flex;
     flex-direction: column;
 }
