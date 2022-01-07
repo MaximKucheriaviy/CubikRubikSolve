@@ -38,9 +38,11 @@ function redTurn_C(){
     solveWay += "r "
 }
 function redTurn_aC(){
+    let buff = solveWay
     redTurn_C()
     redTurn_C()
     redTurn_C()
+    solveWay = buff + " ri"
 }
 function blueTurn_C(){
     let buff = new Array
@@ -68,9 +70,11 @@ function blueTurn_C(){
     solveWay += "b "
 }
 function blueTurn_aC(){
+    let buff = solveWay
     blueTurn_C()
     blueTurn_C()
     blueTurn_C()
+    solveWay = buff + "bi"
 }
 function orangeTurn_C(){
     let buff = new Array
@@ -97,9 +101,11 @@ function orangeTurn_C(){
     sideTurn_C(sides.orange)
 }
 function orangeTurn_aC(){
+    let buff = solveWay
     orangeTurn_C()
     orangeTurn_C()
     orangeTurn_C()
+    solveWay = buff + "oi"
 }
 function greenTurn_C(){
     let buff = new Array
@@ -126,9 +132,11 @@ function greenTurn_C(){
     sideTurn_C(sides.green)
 }
 function greenTurn_aC(){
+    let buff = solveWay
     greenTurn_C()
     greenTurn_C()
     greenTurn_C()
+    solveWay = buff + "gi"
 }
 function yellowTurn_C(){
     let buff = new Array
@@ -188,7 +196,9 @@ function whiteTurn_C(){
     sideTurn_C(sides.white)
 }
 function whiteTurn_aC(){
+    let buff = solveWay
     whiteTurn_C()
     whiteTurn_C()
     whiteTurn_C()
+    solveWay = buff + "wi"
 }
