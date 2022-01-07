@@ -42,7 +42,7 @@ function redTurn_aC(){
     redTurn_C()
     redTurn_C()
     redTurn_C()
-    solveWay = buff + "ri "
+    solveWay = buff + " ri"
 }
 function blueTurn_C(){
     let buff = new Array
@@ -74,7 +74,7 @@ function blueTurn_aC(){
     blueTurn_C()
     blueTurn_C()
     blueTurn_C()
-    solveWay = buff + "bi "
+    solveWay = buff + "bi"
 }
 function orangeTurn_C(){
     let buff = new Array
@@ -99,7 +99,6 @@ function orangeTurn_C(){
     cube[sides.blue][6] = buff[2]
 
     sideTurn_C(sides.orange)
-    solveWay += "o "
 }
 function orangeTurn_aC(){
     let buff = solveWay
@@ -131,14 +130,13 @@ function greenTurn_C(){
     cube[sides.orange][6] = buff[2]
 
     sideTurn_C(sides.green)
-    solveWay += "g "
 }
 function greenTurn_aC(){
     let buff = solveWay
     greenTurn_C()
     greenTurn_C()
     greenTurn_C()
-    solveWay = buff + "gi "
+    solveWay = buff + "gi"
 }
 function yellowTurn_C(){
     let buff = new Array

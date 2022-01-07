@@ -220,24 +220,24 @@ function WC_fromYellowToWhite(){
 }
 function WFromSydeToYellow(){
     //обход красной стороны
-    if(cube[sides.red][7] == "w"){
+    if(cude[sides.red][7] == "w"){
         redTurn_aC();
         greenTurn_C();
         yellowTurn_aC();
         greenTurn_aC();
         redTurn_C();
     }
-    else if(cube[sides.red][5] == "w"){
+    else if(cude[sides.red][5] == "w"){
         greenTurn_C();
         yellowTurn_C();
         greenTurn_aC();
     }
-    else if(cube[sides.red][3] == "w"){
+    else if(cude[sides.red][3] == "w"){
         blueTurn_aC();
         yellowTurn_aC();
         blueTurn_C();
     }
-    else if(cube[sides.red][1] == "w"){
+    else if(cude[sides.red][1] == "w"){
         redTurn_C();
         greenTurn_C();
         yellowTurn_aC();
@@ -245,94 +245,94 @@ function WFromSydeToYellow(){
         redTurn_aC();
     }
     //обход синей стороны
-    else if(cube[sides.blue][1] == "w"){
+    else if(cude[sides.blue][1] == "w"){
         blueTurn_C();
         redTurn_C();
         yellowTurn_aC();
         redTurn_aC();
         blueTurn_aC();
     }
-    else if(cube[sides.blue][5] == "w"){
+    else if(cude[sides.blue][5] == "w"){
         redTurn_C();
         yellowTurn_C();
         redTurn_aC();
     }
-    else if(cube[sides.blue][7] == "w"){
+    else if(cude[sides.blue][7] == "w"){
         blueTurn_aC();
         redTurn_C();
         yellowTurn_aC();
         redTurn_aC();
         blueTurn_C();
     }
-    else if(cube[sides.blue][3] == "w"){
+    else if(cude[sides.blue][3] == "w"){
         orangeTurn_aC();
         yellowTurn_aC();
         orangeTurn_C();
     }
     //обход оранжевой стороны
-    else if(cube[sides.orange][1] == "w"){
+    else if(cude[sides.orange][1] == "w"){
         orangeTurn_C();
         blueTurn_C();
         yellowTurn_aC();
         blueTurn_aC();
         orangeTurn_aC();
     }
-    else if(cube[sides.orange][5] == "w"){
+    else if(cude[sides.orange][5] == "w"){
         blueTurn_C();
         yellowTurn_C();
         blueTurn_aC();
     }
-    else if(cube[sides.orange][7] == "w"){
+    else if(cude[sides.orange][7] == "w"){
         orangeTurn_aC();
         blueTurn_C();
         yellowTurn_aC();
         blueTurn_aC();
         orangeTurn_C();
     }
-    else if(cube[sides.orange][3] == "w"){
+    else if(cude[sides.orange][3] == "w"){
         greenTurn_aC();
         yellowTurn_aC();
         greenTurn_C();
     }
     //обход зеленой стороны
-    else if(cube[sides.green][1] == "w"){
+    else if(cude[sides.green][1] == "w"){
         greenTurn_C();
         orangeTurn_C();
         yellowTurn_aC();
         orangeTurn_aC();
         greenTurn_aC();
     }
-    else if(cube[sides.orange][5] == "w"){
+    else if(cude[sides.orange][5] == "w"){
         orangeTurn_C();
         yellowTurn_C();
         orangeTurn_aC();
     }
-    else if(cube[sides.orange][7] == "w"){
+    else if(cude[sides.orange][7] == "w"){
         greenTurn_aC();
         orangeTurn_C();
         yellowTurn_aC();
         orangeTurn_aC();
         greenTurn_C();
     }
-    else if(cube[sides.orange][3] == "w"){
+    else if(cude[sides.orange][3] == "w"){
         redTurn_aC();
         yellowTurn_aC();
         redTurn_C();
     }
     //обход белой стороны
-    else if(cube[sides.white][1] == "w" && cube[sides.red][7] != "r"){
+    else if(cude[sides.white][1] == "w" && cude[sides.red][7] != "r"){
         redTurn_C();
         redTurn_C();
     }
-    else if(cube[sides.white][5] == "w" && cube[sides.green][7] != "g"){
+    else if(cude[sides.white][5] == "w" && cude[sides.green][7] != "g"){
         greenTurn_C();
         greenTurn_C()
     }
-    else if(cube[sides.white][7] == "w" && cube[sides.orange][7] != "o"){
+    else if(cude[sides.white][7] == "w" && cude[sides.orange][7] != "o"){
         orangeTurn_C();
         orangeTurn_C()
     }
-    else if(cube[sides.white][3] == "w" && cube[sides.blue][7] != "b"){
+    else if(cude[sides.white][3] == "w" && cude[sides.blue][7] != "b"){
         blueTurn_C();
         blueTurn_C();
     }
@@ -341,9 +341,6 @@ function WFromSydeToYellow(){
 function solvWiteCrost(){
     WC_fromYellowToWhite();
     WFromSydeToYellow();
-    if(cube[sides.white][1] != "w" && cube[sides.white][5] != "w" && cube[sides.white][7] != "w" && cube[sides.white][3] != "w"  && cube[sides.red][7] != "r" && cube[sides.blue][7] != "b" && cube[sides.orange][7] != "o" && cube[sides.green][7] != "g"){
-        solvWiteCrost();
-    }
 }
 function solveCube(){
     solvWiteCrost();
