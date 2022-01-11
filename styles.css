@@ -76,6 +76,7 @@ nav {
   background-color: yellow;
 }
 .controll-block {
+  visibility: hidden;
   position: absolute;
   border: 1px solid #000000;
   background: burlywood;
