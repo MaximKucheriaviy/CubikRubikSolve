@@ -3,8 +3,14 @@ function changePinColor(event){
     if(target.id != "r5" && target.id != "w5" && target.id != "g5" && target.id != "b5" && target.id != "o5" && target.id != "y5"){
         if(target.className == "green-block" || target.className == "red-block" || target.className == "white-block" || target.className == "blue-block" || target.className == "orange-block" || target.className == "yellow-block"){
             controlBlock.style.visibility = "visible";
+            controlBlock.style.top = event.pageY + "px";
+            controlBlock.style.left = event.pageX + "px";
+        }
+        else {
+            controlBlock.style.visibility = "hidden";
         }
     }
+    
 }    
 function colorToString(obj){
     if(window.getComputedStyle(obj).backgroundColor == redRGB){
