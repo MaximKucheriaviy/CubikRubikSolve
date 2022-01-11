@@ -5,9 +5,12 @@ function changePinColor(event){
             controlBlock.style.visibility = "visible";
             controlBlock.style.top = event.pageY + "px";
             controlBlock.style.left = event.pageX + "px";
+            selectedBlock = target;
+            selectedBlock.style.borderColor = "white";
         }
         else {
             controlBlock.style.visibility = "hidden";
+            selectedBlock.style.borderColor = "";
         }
     }
     
