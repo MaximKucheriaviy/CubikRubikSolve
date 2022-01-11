@@ -1,6 +1,6 @@
 // objects
 let cubeMap = document.querySelector(".cubic-partition");
-
+let controlBlock = document.querySelector(".controll-block");
 
 
 let createButton = document.querySelector('.create-button')
