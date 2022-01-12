@@ -104,3 +104,11 @@ nav {
   border: 1px solid black;
   border-radius: 10px;
 }
+.red-block:hover,
+.green-block:hover,
+.white-block:hover,
+.blue-block:hover,
+.orange-block:hover,
+.yellow-block:hover {
+  border: 1px solid rgb(255, 0, 0);
+}

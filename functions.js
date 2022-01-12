@@ -9,7 +9,7 @@ function changePinColor(event){
             selectedBlock.style.borderColor = "white";
         }
         else {
-            controlBlock.style.visibility = "hidden";
+            controlBlock.style.visibility = "";
             selectedBlock.style.borderColor = "";
         }
     }
