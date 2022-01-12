@@ -7,3 +7,6 @@ createButton.onclick = function(){
     showCube()
     ecran.textContent = solveWay
 }
+controlBlock.onclick = function (event) {
+     selectColor(event)
+}

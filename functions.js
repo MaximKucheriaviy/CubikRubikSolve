@@ -6,15 +6,55 @@ function changePinColor(event){
             controlBlock.style.top = event.pageY + "px";
             controlBlock.style.left = event.pageX + "px";
             selectedBlock = target;
+            console.log(selectedBlock.parentNode.className)
             selectedBlock.style.borderColor = "white";
         }
         else {
             controlBlock.style.visibility = "hidden";
             selectedBlock.style.borderColor = "";
+            selectedBlock = undefined;
         }
     }
-    
-}    
+}
+function selectColor(event) {
+    let target = event.target;
+    if (target.className == "white-block") {
+        selectedBlock.style.backgroundColor = white;
+        controlBlock.style.visibility = "hidden";
+        selectedBlock.style.borderColor = "";
+        selectedBlock = undefined;
+    }
+    else if (target.className == "red-block") {
+        selectedBlock.style.backgroundColor = red;
+        controlBlock.style.visibility = "hidden";
+        selectedBlock.style.borderColor = "";
+        selectedBlock = undefined;
+    }
+    else if (target.className == "green-block") {
+        selectedBlock.style.backgroundColor = green;
+        controlBlock.style.visibility = "hidden";
+        selectedBlock.style.borderColor = "";
+        selectedBlock = undefined;
+    }
+    else if (target.className == "blue-block") {
+        selectedBlock.style.backgroundColor = blue;
+        controlBlock.style.visibility = "hidden";
+        selectedBlock.style.borderColor = "";
+        selectedBlock = undefined;
+    }
+    else if (target.className == "orange-block") {
+        selectedBlock.style.backgroundColor = orange;
+        controlBlock.style.visibility = "hidden";
+        selectedBlock.style.borderColor = "";
+        selectedBlock = undefined;
+    }
+    else if (target.className == "yellow-block") {
+        selectedBlock.style.backgroundColor = yellow;
+        controlBlock.style.visibility = "hidden";
+        selectedBlock.style.borderColor = "";
+        selectedBlock = undefined;
+    }
+}
 function colorToString(obj){
     if(window.getComputedStyle(obj).backgroundColor == redRGB){
         return "r"
