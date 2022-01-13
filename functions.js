@@ -379,7 +379,176 @@ function solvWiteCrost(){
     }
     
 }
+function cornerInstall(rightSide, leftSyde, variant) {
+    console.log(rightSide, leftSyde, variant)
+    if (variant) {
+        if (rightSide == sides.orange) {
+            orangeTurn_C()
+            yellowTurn_C()
+            orangeTurn_aC()
+        }
+        else if (rightSide == sides.green) {
+            greenTurn_C()
+            yellowTurn_C()
+            greenTurn_aC()
+        }
+        else if (rightSide == sides.red) {
+            redTurn_C()
+            yellowTurn_C()
+            redTurn_aC()
+        }
+        else if (rightSide == sides.blue) {
+            blueTurn_C()
+            yellowTurn_C()
+            blueTurn_aC()
+        }
+    }
+    else{
+        if (leftSyde == sides.orange) {
+            orangeTurn_aC()
+            yellowTurn_aC()
+            orangeTurn_C()
+        }
+        else if (leftSyde == sides.green) {
+            greenTurn_aC()
+            yellowTurn_aC()
+            greenTurn_C()
+        }
+        else if (leftSyde == sides.red) {
+            redTurn_aC()
+            yellowTurn_aC()
+            redTurn_C()
+        }
+        else if (leftSyde == sides.blue) {
+            blueTurn_aC()
+            yellowTurn_aC()
+            blueTurn_C()
+        }
+    }
+}
+function cornerPrepareFromSydes() {
+    while (cube[sides.red][0] == "w" || cube[sides.red][2] == "w" || cube[sides.blue][0] == "w" || cube[sides.blue][2] == "w" /*|| cube[sides.orange][0] == "w" || cube[sides.orange][2] == "w" || cube[sides.green][0] == "w" || cube[sides.green][2] == "w"*/) {
+        // оюход красной  стороны
+        if (cube[sides.red][0] == "w") {
+            if (cube[sides.blue][2] == "b") {
+                cornerInstall(sides.red, sides.blue, true);
+            }
+            else if (cube[sides.blue][2] == "o") {
+                yellowTurn_C();
+                cornerInstall(sides.blue, sides.orange, true);
+            }
+            else if (cube[sides.blue][2] == "g") {
+                yellowTurn_C();
+                yellowTurn_C();
+                cornerInstall(sides.orange, sides.green, true);
+            }   
+            else if (cube[sides.blue][2] == "r") {
+                yellowTurn_aC();
+                cornerInstall(sides.green, sides.red, true);
+            }   
+        }
+        else if (cube[sides.red][2] == "w") {
+            if (cube[sides.green][0] == "b") {
+                yellowTurn_C();
+                yellowTurn_C();
+                cornerInstall(sides.blue, sides.orange, false);
+            }
+            else if (cube[sides.green][0] == "o") {
+                yellowTurn_aC();
+                cornerInstall(sides.orange, sides.green, false);
+            }
+            else if (cube[sides.green][0] == "g") {
+                
+                cornerInstall(sides.green, sides.red, false);
+            }   
+            else if (cube[sides.green][0] == "r") {
+                yellowTurn_C();
+                cornerInstall(sides.red, sides.blue, false);
+            }   
+        }
+        // оюход синей  стороны
+        else if (cube[sides.blue][0] == "w") {
+            if (cube[sides.orange][2] == "b") {
+                yellowTurn_aC()
+                cornerInstall(sides.red, sides.blue, true);
+            }
+            else if (cube[sides.orange][2] == "o") {
+                cornerInstall(sides.blue, sides.orange, true);
+            }
+            else if (cube[sides.orange][2] == "g") {
+                yellowTurn_C();
+                cornerInstall(sides.orange, sides.green, true);
+            }   
+            else if (cube[sides.orange][2] == "r") {
+                yellowTurn_C();
+                yellowTurn_C();
+                cornerInstall(sides.green, sides.red, true);
+            }   
+        }
+        else if (cube[sides.blue][2] == "w") {
+            if (cube[sides.red][0] == "b") {
+                yellowTurn_C();
+                cornerInstall(sides.blue, sides.orange, false);
+            }
+            else if (cube[sides.red][0] == "o") {
+                yellowTurn_C();
+                yellowTurn_C();
+                cornerInstall(sides.orange, sides.green, false);
+            }
+            else if (cube[sides.red][0] == "g") {     
+                yellowTurn_aC();
+                cornerInstall(sides.green, sides.red, false);
+            }   
+            else if (cube[sides.red][0] == "r") {
+                yellowTurn_C();
+                cornerInstall(sides.red, sides.blue, false);
+            }   
+        }
+        // оюход синей  стороны
+        else if (cube[sides.blue][0] == "w") {
+            if (cube[sides.orange][2] == "b") {
+                yellowTurn_aC()
+                cornerInstall(sides.red, sides.blue, true);
+            }
+            else if (cube[sides.orange][2] == "o") {
+                cornerInstall(sides.blue, sides.orange, true);
+            }
+            else if (cube[sides.orange][2] == "g") {
+                yellowTurn_C();
+                cornerInstall(sides.orange, sides.green, true);
+            }   
+            else if (cube[sides.orange][2] == "r") {
+                yellowTurn_C();
+                yellowTurn_C();
+                cornerInstall(sides.green, sides.red, true);
+            }   
+        }
+        else if (cube[sides.blue][2] == "w") {
+            if (cube[sides.red][0] == "b") {
+                yellowTurn_C();
+                cornerInstall(sides.blue, sides.orange, false);
+            }
+            else if (cube[sides.red][0] == "o") {
+                yellowTurn_C();
+                yellowTurn_C();
+                cornerInstall(sides.orange, sides.green, false);
+            }
+            else if (cube[sides.red][0] == "g") {     
+                yellowTurn_aC();
+                cornerInstall(sides.green, sides.red, false);
+            }   
+            else if (cube[sides.red][0] == "r") {
+                yellowTurn_C();
+                cornerInstall(sides.red, sides.blue, false);
+            }   
+        }
+    }
+}
+function solweWhiteCorners() {
+    cornerPrepareFromSydes();
+}
 function solveCube(){
     solvWiteCrost();
+    solweWhiteCorners()
 }
 
