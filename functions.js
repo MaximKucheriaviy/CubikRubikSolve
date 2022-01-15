@@ -427,7 +427,7 @@ function cornerInstall(rightSide, leftSyde, variant) {
     }
 }
 function cornerPrepareFromSydes() {
-    while (cube[sides.red][0] == "w" || cube[sides.red][2] == "w" || cube[sides.blue][0] == "w" || cube[sides.blue][2] == "w" /*|| cube[sides.orange][0] == "w" || cube[sides.orange][2] == "w" || cube[sides.green][0] == "w" || cube[sides.green][2] == "w"*/) {
+    while (cube[sides.red][0] == "w" || cube[sides.red][2] == "w" || cube[sides.blue][0] == "w" || cube[sides.blue][2] == "w" || cube[sides.orange][0] == "w" || cube[sides.orange][2] == "w" || cube[sides.green][0] == "w" || cube[sides.green][2] == "w") {
         // оюход красной  стороны
         if (cube[sides.red][0] == "w") {
             if (cube[sides.blue][2] == "b") {
@@ -504,40 +504,76 @@ function cornerPrepareFromSydes() {
                 cornerInstall(sides.red, sides.blue, false);
             }   
         }
-        // оюход синей  стороны
-        else if (cube[sides.blue][0] == "w") {
-            if (cube[sides.orange][2] == "b") {
+        // оюход оранжевой  стороны
+        else if (cube[sides.orange][0] == "w") {
+            if (cube[sides.green][2] == "b") {
+                yellowTurn_aC()
                 yellowTurn_aC()
                 cornerInstall(sides.red, sides.blue, true);
             }
-            else if (cube[sides.orange][2] == "o") {
-                cornerInstall(sides.blue, sides.orange, true);
+            else if (cube[sides.green][2] == "o") {
+                yellowTurn_aC()
+                cornerInstall(sides.green, sides.orange, true);
             }
-            else if (cube[sides.orange][2] == "g") {
-                yellowTurn_C();
+            else if (cube[sides.green][2] == "g") {
                 cornerInstall(sides.orange, sides.green, true);
             }   
-            else if (cube[sides.orange][2] == "r") {
-                yellowTurn_C();
+            else if (cube[sides.green][2] == "r") {
                 yellowTurn_C();
                 cornerInstall(sides.green, sides.red, true);
             }   
         }
-        else if (cube[sides.blue][2] == "w") {
-            if (cube[sides.red][0] == "b") {
-                yellowTurn_C();
+        else if (cube[sides.orange][2] == "w") {
+            if (cube[sides.blue][0] == "b") {
                 cornerInstall(sides.blue, sides.orange, false);
             }
-            else if (cube[sides.red][0] == "o") {
-                yellowTurn_C();
+            else if (cube[sides.blue][0] == "o") {
                 yellowTurn_C();
                 cornerInstall(sides.orange, sides.green, false);
             }
-            else if (cube[sides.red][0] == "g") {     
+            else if (cube[sides.blue][0] == "g") {     
                 yellowTurn_aC();
+                yellowTurn_aC()
                 cornerInstall(sides.green, sides.red, false);
             }   
-            else if (cube[sides.red][0] == "r") {
+            else if (cube[sides.blue][0] == "r") {
+                yellowTurn_aC();
+                cornerInstall(sides.red, sides.blue, false);
+            }   
+        }
+        // оюход зеленой стороны
+        else if (cube[sides.green][0] == "w") {
+            if (cube[sides.red][2] == "b") {
+                yellowTurn_C()
+                cornerInstall(sides.red, sides.blue, true);
+            }
+            else if (cube[sides.red][2] == "o") {
+                yellowTurn_aC()
+                yellowTurn_aC()
+                cornerInstall(sides.blue, sides.orange, true);
+            }
+            else if (cube[sides.red][2] == "g") {
+                yellowTurn_aC()
+                cornerInstall(sides.orange, sides.green, true);
+            }   
+            else if (cube[sides.red][2] == "r") {
+                cornerInstall(sides.green, sides.red, true);
+            }   
+        }
+        else if (cube[sides.green][2] == "w") {
+            if (cube[sides.orange][0] == "b") {
+                yellowTurn_aC();
+                cornerInstall(sides.blue, sides.orange, false);
+            }
+            else if (cube[sides.orange][0] == "o") {
+                cornerInstall(sides.orange, sides.green, false);
+            }
+            else if (cube[sides.orange][0] == "g") {     
+                yellowTurn_C();
+                cornerInstall(sides.green, sides.red, false);
+            }   
+            else if (cube[sides.orange][0] == "r") {
+                yellowTurn_C();
                 yellowTurn_C();
                 cornerInstall(sides.red, sides.blue, false);
             }   
@@ -549,6 +585,6 @@ function solweWhiteCorners() {
 }
 function solveCube(){
     solvWiteCrost();
-    solweWhiteCorners()
+   // solweWhiteCorners()
 }
 
