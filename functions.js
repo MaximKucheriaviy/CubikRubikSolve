@@ -580,11 +580,54 @@ function cornerPrepareFromSydes() {
         }
     }
 }
+function whteCornterUp() {
+    if (cube[sides.red][6] == "w") {
+        redTurn_C()
+        yellowTurn_C()
+        redTurn_aC()
+    }
+    else if (cube[sides.red][8] == "w") {
+        redTurn_aC()
+        yellowTurn_aC()
+        redTurn_C()
+    }
+    else if (cube[sides.blue][6] == "w") {
+        blueTurn_C()
+        yellowTurn_C()
+        blueTurn_aC()
+    }
+    else if (cube[sides.blue][8] == "w") {
+        blueTurn_aC()
+        yellowTurn_aC()
+        blueTurn_C()
+    }
+    else if (cube[sides.orange][6] == "w") {
+        orangeTurn_C()
+        yellowTurn_C()
+        orangeTurn_aC()
+    }
+    else if (cube[sides.orange][8] == "w") {
+        orangeTurn_aC()
+        yellowTurn_aC()
+        orangeTurn_C()
+    }
+    else if (cube[sides.green][6] == "w") {
+        greenTurn_C()
+        yellowTurn_C()
+        greenTurn_aC()
+    }
+    else if (cube[sides.green][8] == "w") {
+        greenTurn_aC()
+        yellowTurn_aC()
+        greenTurn_C()
+    }
+}
 function solweWhiteCorners() {
     cornerPrepareFromSydes();
+    whteCornterUp();
 }
 function solveCube(){
     solvWiteCrost();
-   // solweWhiteCorners()
+    solweWhiteCorners()
 }
 
