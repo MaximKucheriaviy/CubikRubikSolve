@@ -374,7 +374,7 @@ function WFromSydeToYellow() {
 function solvWiteCrost(){
     WC_fromYellowToWhite();
     WFromSydeToYellow();
-    if ((cube[sides.white][1] != "w" && cube[sides.red][7] != "r") || (cube[sides.white][5] != "w" && cube[sides.green][7] != "g") || (cube[sides.white][7] != "w" && cube[sides.orange][7] != "o") || (cube[sides.white][3] != "w" && cube[sides.blue][7] != "b")) {
+    if ((cube[sides.white][1] != "w" || cube[sides.red][7] != "r") || (cube[sides.white][5] != "w" || cube[sides.green][7] != "g") || (cube[sides.white][7] != "w" || cube[sides.orange][7] != "o") || (cube[sides.white][3] != "w" || cube[sides.blue][7] != "b")) {
         solvWiteCrost()
     }
     
@@ -622,9 +622,78 @@ function whteCornterUp() {
         greenTurn_C()
     }
 }
+function witeTurnOnYellow(){
+    if(cube[sides.yellow][0] == "w"){
+        if(cube[sides.white][6] != "w" && cube[sides.orange][8] != "o" && cube[sides.blue][6] != "b"){
+            blueTurn_C();
+            yellowTurn_aC();
+            blueTurn_C();
+        } 
+        else{
+            yellowTurn_C();
+        }
+    }
+    else if(cube[sides.yellow][2] == "w"){
+        if(cube[sides.white][8] != "w" && cube[sides.orange][6] != "o" && cube[sides.green][8] != "g"){
+            orangeTurn_C();
+            yellowTurn_aC();
+            orangeTurn_aC();
+        } 
+        else{
+            yellowTurn_C();
+        }
+    }
+    else if(cube[sides.yellow][8] == "w"){
+        if(cube[sides.white][2] != "w" && cube[sides.red][8] != "r" && cube[sides.green][6] != "g"){
+            greenTurn_C();
+            yellowTurn_aC();
+            greenTurn_aC();
+        } 
+        else{
+            yellowTurn_C();
+        }
+    }
+    else if(cube[sides.yellow][6] == "w"){
+        if(cube[sides.white][0] != "w" && cube[sides.blue][8] != "b" && cube[sides.red][6] != "r"){
+            redTurn_C();
+            yellowTurn_aC();
+            redTurn_aC();
+        } 
+        else{
+            yellowTurn_C();
+        }
+    }
+}
+function wrongWhite(){
+    if(cube[sides.white][0] == "w" && cube[sides.red][6] != "r"){
+        redTurn_C();
+        yellowTurn_C();
+        redTurn_aC();
+    }
+    else if(cube[sides.white][2] == "w" && cube[sides.green][6] != "g"){
+        greenTurn_C();
+        yellowTurn_C();
+        greenTurn_aC();
+    }
+    else if(cube[sides.white][8] == "w" && cube[sides.orange][6] != "o"){
+        orangeTurn_C();
+        yellowTurn_C();
+        orangeTurn_aC();
+    }
+    else if(cube[sides.white][6] == "w" && cube[sides.blue][6] != "r"){
+        blueTurn_C();
+        yellowTurn_C();
+        blueTurn_aC();
+    }
+}
 function solweWhiteCorners() {
     cornerPrepareFromSydes();
     whteCornterUp();
+    witeTurnOnYellow();
+    wrongWhite();
+    if(cube[sides.white][0] != "w" && cube[sides.white][2] != "w" && cube[sides.white][6] != "w" && cube[sides.white][8] != "w" && cube[sides.red][6] != "r" && cube[sides.blue][6] != "b" && cube[sides.orange][6] != "o" && cube[sides.green][6] != "g"){
+        solweWhiteCorners()
+    }
 }
 function solveCube(){
     solvWiteCrost();
