@@ -693,7 +693,7 @@ function solweWhiteCorners() {
     wrongWhite();
     if(cube[sides.white][0] != "w" && cube[sides.white][2] != "w" && cube[sides.white][6] != "w" && cube[sides.white][8] != "w" && cube[sides.red][6] != "r" && cube[sides.blue][6] != "b" && cube[sides.orange][6] != "o" && cube[sides.green][6] != "g"){
         solweWhiteCorners()
-    }
+    }   
 }
 function solveCube(){
     solvWiteCrost();
