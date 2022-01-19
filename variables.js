@@ -7,7 +7,7 @@ let selectedBlock;
 let createButton = document.querySelector('.create-button')
 let ecran = document.querySelector(".solve")
 let solveWay = ""
-let debug = true;
+let debug = false ; // установаить в true для отладки
 
 let cube = [["r", "r", "r", "r", "r", "r", "r", "r", "r"],
             ["w", "w", "w", "w", "w", "w", "w", "w", "w"],

@@ -636,7 +636,7 @@ function witeTurnOnYellow(){
         alert("witeTurnOnYellow")
     }
     if(cube[sides.yellow][0] == "w"){
-        if(cube[sides.white][6] != "w" && cube[sides.orange][8] != "o" && cube[sides.blue][6] != "b"){
+        if(cube[sides.white][6] != "w" && (cube[sides.orange][8] != "o" || cube[sides.blue][6] != "b")){
             blueTurn_C();
             yellowTurn_aC();
             blueTurn_aC();
@@ -646,7 +646,7 @@ function witeTurnOnYellow(){
         }
     }
     else if(cube[sides.yellow][2] == "w"){
-        if(cube[sides.white][8] != "w" && cube[sides.orange][6] != "o" && cube[sides.green][8] != "g"){
+        if(cube[sides.white][8] != "w" && (cube[sides.orange][6] != "o" || cube[sides.green][8] != "g")){
             orangeTurn_C();
             yellowTurn_aC();
             orangeTurn_aC();
@@ -656,7 +656,7 @@ function witeTurnOnYellow(){
         }
     }
     else if(cube[sides.yellow][8] == "w"){
-        if(cube[sides.white][2] != "w" && cube[sides.red][8] != "r" && cube[sides.green][6] != "g"){
+        if(cube[sides.white][2] != "w" && (cube[sides.red][8] != "r" || cube[sides.green][6] != "g")){
             greenTurn_C();
             yellowTurn_aC();
             greenTurn_aC();
@@ -666,7 +666,7 @@ function witeTurnOnYellow(){
         }
     }
     else if(cube[sides.yellow][6] == "w"){
-        if(cube[sides.white][0] != "w" && cube[sides.blue][8] != "b" && cube[sides.red][6] != "r"){
+        if(cube[sides.white][0] != "w" && (cube[sides.blue][8] != "b" || cube[sides.red][6] != "r")){
             redTurn_C();
             yellowTurn_aC();
             redTurn_aC();
@@ -706,7 +706,7 @@ function solweWhiteCorners() {
     whteCornterUp();
     witeTurnOnYellow();
     wrongWhite();
-    if(cube[sides.white][0] != "w" && cube[sides.white][2] != "w" && cube[sides.white][6] != "w" && cube[sides.white][8] != "w" && cube[sides.red][6] != "r" && cube[sides.blue][6] != "b" && cube[sides.orange][6] != "o" && cube[sides.green][6] != "g"){
+    if(cube[sides.white][0] != "w" || cube[sides.white][2] != "w" || cube[sides.white][6] != "w" || cube[sides.white][8] != "w" || cube[sides.red][6] != "r" || cube[sides.blue][6] != "b" || cube[sides.orange][6] != "o" || cube[sides.green][6] != "g"){
         solweWhiteCorners()
     }   
 }
