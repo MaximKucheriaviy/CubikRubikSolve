@@ -380,6 +380,9 @@ function solvWiteCrost(){
     
 }
 function cornerInstall(rightSide, leftSyde, variant) {
+    if(debug){
+        alert("Corner Install")
+    }
     console.log(rightSide, leftSyde, variant)
     if (variant) {
         if (rightSide == sides.orange) {
@@ -427,6 +430,9 @@ function cornerInstall(rightSide, leftSyde, variant) {
     }
 }
 function cornerPrepareFromSydes() {
+    if(debug){
+        alert("cornerPrepareFromSydes")
+    }
     while (cube[sides.red][0] == "w" || cube[sides.red][2] == "w" || cube[sides.blue][0] == "w" || cube[sides.blue][2] == "w" || cube[sides.orange][0] == "w" || cube[sides.orange][2] == "w" || cube[sides.green][0] == "w" || cube[sides.green][2] == "w") {
         // оюход красной  стороны
         if (cube[sides.red][0] == "w") {
@@ -581,6 +587,9 @@ function cornerPrepareFromSydes() {
     }
 }
 function whteCornterUp() {
+    if(debug){
+        alert("whteCornterUp")
+    }
     if (cube[sides.red][6] == "w") {
         redTurn_C()
         yellowTurn_C()
@@ -623,11 +632,14 @@ function whteCornterUp() {
     }
 }
 function witeTurnOnYellow(){
+    if(debug){
+        alert("witeTurnOnYellow")
+    }
     if(cube[sides.yellow][0] == "w"){
         if(cube[sides.white][6] != "w" && cube[sides.orange][8] != "o" && cube[sides.blue][6] != "b"){
             blueTurn_C();
             yellowTurn_aC();
-            blueTurn_C();
+            blueTurn_aC();
         } 
         else{
             yellowTurn_C();
@@ -665,6 +677,9 @@ function witeTurnOnYellow(){
     }
 }
 function wrongWhite(){
+    if(debug){
+        alert("wrongWhite");
+    }
     if(cube[sides.white][0] == "w" && cube[sides.red][6] != "r"){
         redTurn_C();
         yellowTurn_C();
@@ -680,7 +695,7 @@ function wrongWhite(){
         yellowTurn_C();
         orangeTurn_aC();
     }
-    else if(cube[sides.white][6] == "w" && cube[sides.blue][6] != "r"){
+    else if(cube[sides.white][6] == "w" && cube[sides.blue][6] != "b"){
         blueTurn_C();
         yellowTurn_C();
         blueTurn_aC();
