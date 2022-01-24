@@ -710,6 +710,42 @@ function solweWhiteCorners() {
         solweWhiteCorners()
     }   
 }
+function createSucrifice(){
+    orangeTurn_C();
+    yellowTurn_aC();
+    orangeTurn_aC();
+}
+function bordersInstallFromYellow(){
+    // находим синий красный
+    if((cube[sides.yellow][1] == "b" || cube[sides.yellow][1] == "r") && (cube[sides.orange][1] == "b" || cube[sides.orange][1] == "r")){
+        if(cube[sides.yellow][1] == "b"){
+            yellowTurn_aC();
+            yellowTurn_aC();
+        }
+        else if(cube[sides.yellow][1] == "r"){
+            yellowTurn_aC();
+        }
+    }
+    else if((cube[sides.yellow][5] == "b" || cube[sides.yellow][5] == "r") && (cube[sides.green][1] == "b" || cube[sides.green][1] == "r")){
+        if(cube[sides.yellow][5] == "b"){
+            yellowTurn_C();
+            yellowTurn_C();
+        }
+        else if(cube[sides.yellow][5] == "r"){
+            yellowTurn_C()
+        }
+    }
+    else if((cube[sides.yellow][7] == "b" || cube[sides.yellow][7] == "r") && (cube[sides.red][1] == "b" || cube[sides.red][1] == "r")){
+        if(cube[sides.yellow][7] == "b"){
+        }
+        else if(cube[sides.yellow][7] == "r"){
+            yellowTurn_C();
+        }
+    }
+}
+function solveBorders(){
+    createSucrifice();
+}
 function solveCube(){
     solvWiteCrost();
     solweWhiteCorners()
