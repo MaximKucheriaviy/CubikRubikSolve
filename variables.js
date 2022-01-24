@@ -2,7 +2,7 @@
 let cubeMap = document.querySelector(".cubic-partition");
 let controlBlock = document.querySelector(".controll-block");
 let selectedBlock;
-
+let sucrifice = 2;
 
 let createButton = document.querySelector('.create-button')
 let ecran = document.querySelector(".solve")
